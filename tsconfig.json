@@ -27,7 +27,7 @@
             "@components/*": ["src/components/*"],
             "@pages/*": ["src/pages/*"],
             "@types/*": ["src/types/*"],
-            "@stores/*": ["src/stores/*"],
+            "@recoil/*": ["src/recoil/*"],
             "@apis/*": ["src/apis/*"]
         },
         "noImplicitAny": false,

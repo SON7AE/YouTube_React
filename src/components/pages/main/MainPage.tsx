@@ -1,10 +1,22 @@
+import { useRecoilValue } from "recoil"
+import { imageList } from "@recoil/selectors/imageSelector"
+// 컴포넌트
 import CommonHeader from "@components/organisms/common/header/CommonHeader"
-import CommonNavigation from "@/components/organisms/common/navigation/CommonNavigation"
+import CommonNavigation from "@components/organisms/common/navigation/CommonNavigation"
 import CommonFooter from "@components/organisms/common/footer/CommonFooter"
 import SearchBox from "@components/molecules/common/SearchBox"
+import Card from "@components/molecules/main/Card"
 import styles from "./MainPage.module.scss"
 
 function MainPage() {
+    useRecoilValue(imageList)
+
+    const images = useRecoilValue(imageList)
+
+    const CARDLIST = images.data.results.map((item) => {
+        return <Card data={item} key={item.id} />
+    })
+
     return (
         <div className={styles.container}>
             <CommonHeader />
@@ -20,6 +32,7 @@ function MainPage() {
                         <SearchBox />
                     </div>
                 </div>
+                <div className={styles.container__contents__imageBox}>{CARDLIST}</div>
             </div>
             <CommonFooter />
         </div>
