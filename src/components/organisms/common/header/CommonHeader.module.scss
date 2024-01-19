@@ -1,0 +1,57 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 56px;
+
+    padding: 0 16px;
+
+    &__logoBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+
+        gap: 8px;
+
+        &__logo {
+            height: 75%;
+        }
+        &__title {
+            font-size: 24px;
+            font-weight: 600;
+        }
+    }
+    &__profileBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        gap: 16px;
+
+        &__button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            outline: none;
+            cursor: pointer;
+
+            padding: 6px 12px;
+
+            border: 1px solid $color-white-300;
+            border-radius: 4px;
+
+            color: $color-white-600;
+            background-color: $color-white-000;
+        }
+        &__userName {
+            color: $color-white-600;
+            font-weight: 400;
+            font-size: 15px;
+        }
+    }
+}

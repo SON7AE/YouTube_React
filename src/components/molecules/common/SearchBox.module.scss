@@ -1,0 +1,45 @@
+.searchBox {
+    display: flex;
+    align-items: center;
+
+    gap: 28px;
+
+    &__search {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: 50vw;
+
+        padding: 14px;
+        gap: 16px;
+
+        border-radius: 8px;
+        border: 1px solid $color-gray-300;
+        background-color: $color-white-000;
+        box-shadow: 0px 2px 8px 0px rgba(228, 231, 236, 0.7);
+
+        &:focus-within {
+            border-radius: 8px;
+            border: 1px solid #2e90fa;
+            background: #fff;
+            box-shadow: 0px 0px 8px 0px rgba(21, 112, 239, 0.3);
+
+            .input {
+                color: $color-gray-800;
+            }
+        }
+        &__input {
+            outline: none;
+            border: none;
+
+            width: 100%;
+
+            font-size: 17px;
+            font-weight: 500;
+            line-height: 17px;
+
+            color: $color-gray-500;
+        }
+    }
+}

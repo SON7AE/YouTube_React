@@ -1,0 +1,60 @@
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 56px;
+
+    padding: 0 16px;
+
+    border: 1px solid $color-gray-100;
+    background-color: $color-white-000;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    gap: 8px;
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 24px;
+        height: 24px;
+
+        padding: 3px 7px;
+
+        color: $color-gray-500;
+
+        font-family: "Public Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        line-height: 16px; /* 100% */
+
+        background: transparent;
+        border: none;
+        outline: none;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-gray-100;
+            border-radius: 4px;
+
+            color: $color-black-900;
+        }
+        &.active {
+            background-color: $color-gray-100;
+            border-radius: 4px;
+
+            color: $color-black-900;
+        }
+    }
+}
