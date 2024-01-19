@@ -50,4 +50,11 @@ $NAVIGATION-HEIGHT: 50px;
             }
         }
     }
+    @media (min-width: 1024px) and (max-width: 1440px) {
+        &__contents {
+            &__introBox {
+                height: 50%;
+            }
+        }
+    }
 }
