@@ -13,6 +13,7 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route index path="/" element={<MainPage />} />
+                        <Route path="/:id" element={<MainPage />} />
                     </Routes>
                 </BrowserRouter>
             </React.Suspense>

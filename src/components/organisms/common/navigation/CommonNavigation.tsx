@@ -1,5 +1,8 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState, useEffect } from "react"
+import { useLocation, Link } from "react-router-dom"
+import { useRecoilState } from "recoil"
+import { pageState } from "@recoil/atoms/pageState"
+import { searchState } from "@recoil/atoms/searchState"
 import "./CommonNavigation.scss"
 
 interface Navigation {
@@ -11,6 +14,9 @@ interface Navigation {
 }
 
 function Navigation() {
+    const location = useLocation()
+    const [page, setPages] = useRecoilState(pageState)
+    const [search, setSearch] = useRecoilState(searchState)
     const [navigations, setNavigations] = useState<Navigation[]>([
         {
             index: 0,
@@ -98,6 +104,22 @@ function Navigation() {
         },
     ])
 
+    useEffect(() => {
+        navigations.forEach((item: Navigation) => {
+            item.isActive = false
+
+            if (item.path === location.pathname || location.pathname.includes(item.path)) {
+                item.isActive = true
+                setSearch(item.searchValue)
+                setPages(1)
+            } else {
+                item.isActive = false
+            }
+        })
+        setNavigations([...navigations])
+    }, [location.pathname])
+
+    // 헤더 측, 네비게이션 UI
     const navLinks = navigations.map((item: Navigation) => {
         return (
             <Link to={item.path} className={`menu ${item.isActive ? "active" : "inactive"}`} key={item.path}>
