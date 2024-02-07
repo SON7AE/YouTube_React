@@ -52,8 +52,22 @@ function CommonFooter() {
     const moveToPage = (selected: number) => {
         setPages(selected)
     }
-    const moveToPrev = () => {}
-    const moveToNext = () => {}
+    const moveToPrev = () => {
+        if (step === 0) {
+            return
+        } else {
+            setStep(step - 1)
+            setPages(res[step - 1][0])
+        }
+    }
+    const moveToNext = () => {
+        if (step < res[step].length - 2) {
+            setStep(step + 1)
+            setPages(res[step + 1][0])
+        } else {
+            return
+        }
+    }
 
     return (
         <div className={styles.footer}>
