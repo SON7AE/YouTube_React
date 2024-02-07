@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { ImageData } from "@/types/image"
 import styles from "./DetailDialog.module.scss"
 
@@ -15,6 +15,18 @@ function DetailDialog({ data, handleDialog }: Props) {
     const closeDialog = () => {
         handleDialog(false)
     }
+
+    // ESC Key 입력시, 다이얼로그 닫기
+    useEffect(() => {
+        const escKeyDialogClose = (e: any) => {
+            if (e.key === "Escape") {
+                handleDialog(false)
+            }
+        }
+        // esc key를 눌렀을 때 Modal 창 close
+        window.addEventListener("keydown", escKeyDialogClose) // 위에 만들어 놓은 escKeyDialogClose를 keydown했을 때 이벤트로 등록한다. 즉, esc를 눌렀을 때 modal창 종료
+        return () => window.removeEventListener("keydown", escKeyDialogClose) // 위의 이벤트를 제거
+    }, [])
 
     return (
         <div className={styles.container}>
