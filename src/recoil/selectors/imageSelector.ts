@@ -6,7 +6,7 @@ import axios from "axios"
 
 const API_URL = "https://api.unsplash.com/search/photos"
 const API_KEY = "mXSaXElt5u9C4xAlm4bVyaiywj9ZRoElzokF0a9_HAU"
-const PER_PAGE = 30
+const PER_PAGE = 50
 
 export const imageList = selector({
     key: "imageList",
@@ -17,6 +17,7 @@ export const imageList = selector({
         // call unsplash api
         try {
             const res = await axios.get(`${API_URL}?query=${searchValue}&client_id=${API_KEY}&page=${pageValue}&per_page=${PER_PAGE}`)
+
             console.log(res)
 
             return res

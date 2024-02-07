@@ -1,6 +1,6 @@
+import { useState } from "react"
 import { useRecoilValue } from "recoil"
 import { imageList } from "@recoil/selectors/imageSelector"
-import { useState } from "react"
 import { ImageData } from "@/types/image"
 // 컴포넌트
 import CommonHeader from "@components/organisms/common/header/CommonHeader"
@@ -12,13 +12,12 @@ import DetailDialog from "@components/organisms/dialog/DetailDialog"
 import styles from "./MainPage.module.scss"
 
 function MainPage() {
-    useRecoilValue(imageList)
-
-    const [open, setOpen] = useState(false) // 이미지 상세 다이얼로그 관리 State
-    const [imageData, setImageData] = useState<ImageData>()
-
     const images = useRecoilValue(imageList)
-    const CARDLIST = images.data.results.map((item) => {
+    const [imageData, setImageData] = useState<ImageData>()
+    const [open, setOpen] = useState(false) // 이미지 상세 다이얼로그 관리 State
+
+    // 이미지 카드 UI
+    const CARD_LIST = images.data.results.map((item: any) => {
         return <Card data={item} key={item.id} handleDialog={setOpen} handleEvent={setImageData} />
     })
 
@@ -37,7 +36,7 @@ function MainPage() {
                         <SearchBox />
                     </div>
                 </div>
-                <div className={styles.container__contents__imageBox}>{CARDLIST}</div>
+                <div className={styles.container__contents__imageBox}>{CARD_LIST}</div>
             </div>
             <CommonFooter />
             {open && <DetailDialog data={imageData} handleDialog={setOpen} />}
