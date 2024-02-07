@@ -40,7 +40,7 @@ function MainPage() {
                 <div className={styles.container__contents__imageBox}>{CARDLIST}</div>
             </div>
             <CommonFooter />
-            {open && <DetailDialog data={imageData} />}
+            {open && <DetailDialog data={imageData} handleDialog={setOpen} />}
         </div>
     )
 }
