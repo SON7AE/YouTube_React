@@ -94,6 +94,21 @@
                 }
             }
         }
+        &__body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: calc(100% - 220px);
+
+            .image {
+                width: 100%;
+                height: 100%;
+
+                object-fit: cover;
+            }
+        }
         &__footer {
             display: flex;
             flex-direction: column;

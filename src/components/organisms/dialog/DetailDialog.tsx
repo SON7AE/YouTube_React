@@ -45,7 +45,9 @@ function DetailDialog({ data, handleDialog }: Props) {
                         <button className={styles.bookmark__button}>다운로드</button>
                     </div>
                 </div>
-                <div className={styles.container__dialog__body}></div>
+                <div className={styles.container__dialog__body}>
+                    <img src={data.urls.small} alt={data.alt_description} className={styles.image} />
+                </div>
                 <div className={styles.container__dialog__footer}>
                     <div className={styles.infoBox}>
                         <div className={styles.infoBox__item}>
