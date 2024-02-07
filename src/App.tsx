@@ -4,11 +4,12 @@ import { RecoilRoot } from "recoil"
 
 // 페이지 컴포넌트
 import MainPage from "./pages/main/MainPage"
+import LoadingPage from "./pages/loading/Loading"
 
 function App() {
     return (
         <RecoilRoot>
-            <React.Suspense fallback={<div>Loading...</div>}>
+            <React.Suspense fallback={<LoadingPage />}>
                 <BrowserRouter>
                     <Routes>
                         <Route index path="/" element={<MainPage />} />
