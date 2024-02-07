@@ -10,10 +10,10 @@ function CommonHeader() {
             <div className={styles.header__profileBox}>
                 <button className={styles.header__profileBox__button}>사진 제출</button>
                 <button className={styles.header__profileBox__button}>
-                    북마크
-                    <span className="material-symbols-outlined" style={{ fontSize: 18 + "px", marginTop: 2 + "px", marginRight: -6 + "px", marginLeft: 2 + "px" }}>
+                    <span className="material-symbols-outlined" style={{ fontSize: 16 + "px", marginTop: 3 + "px", marginRight: 2 + "px" }}>
                         favorite
                     </span>
+                    북마크
                 </button>
                 <span className={styles.header__profileBox__userName}>9Diin | 9Diin@YouTube.com</span>
             </div>
