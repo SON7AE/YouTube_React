@@ -1,6 +1,6 @@
-import { atom } from "recoil"
+import { atom } from 'recoil'
 
 export const pageState = atom<number>({
-    key: "pageState",
+    key: 'pageState',
     default: 1,
 })

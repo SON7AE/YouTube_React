@@ -1,0 +1,24 @@
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 50px;
+
+    gap: 32px;
+
+    border-bottom: 1px solid $color-white-300;
+
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 100%;
+
+        text-decoration: none; // 추후에 div 태그를 React Router 속성 중 Link 태그로 바꿀 것이기 때문입니다.
+        color: $color-white-700;
+        font-weight: 500;
+    }
+}

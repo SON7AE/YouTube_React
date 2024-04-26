@@ -1,6 +1,6 @@
-import { atom } from "recoil"
+import { atom } from 'recoil'
 
 export const searchState = atom<string>({
-    key: "searchState",
-    default: "korea",
+    key: 'searchState',
+    default: 'Korea',
 })
