@@ -20,5 +20,18 @@
         text-decoration: none; // 추후에 div 태그를 React Router 속성 중 Link 태그로 바꿀 것이기 때문입니다.
         color: $color-white-700;
         font-weight: 500;
+
+        &.inactive {
+            color: $color-white-700;
+            border-bottom: none;
+        }
+        &.active {
+            color: $color-black-900;
+            border-bottom: 2px solid $color-white-700;
+        }
+        &:hover {
+            color: $color-black-900;
+            font-weight: 600;
+        }
     }
 }
