@@ -7,6 +7,7 @@ import CommonNav from '@components/common/navigation/CommonNav'
 import CommonFooter from '@components/common/footer/CommonFooter'
 import Card from './components/Card'
 import DetailDialog from '@components/common/dialog/DetailDialog'
+import Loading from './components/Loading'
 // CSS
 import styles from './styles/index.module.scss'
 import { CardDTO } from './types/card'
@@ -25,7 +26,7 @@ function index() {
             })
             return result
         } else {
-            return <div>loading...</div>
+            return <Loading />
         }
     }, [imgSelector])
 
