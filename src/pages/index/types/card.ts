@@ -20,6 +20,7 @@ export interface CardDTO {
     urls: Url
     user: any
     width: number
+    isBookmark?: boolean
 }
 
 interface Link {
