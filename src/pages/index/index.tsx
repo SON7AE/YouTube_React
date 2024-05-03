@@ -25,7 +25,7 @@ function index() {
                 return <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData} />
             })
             return result
-        } else if (imgSelector === null) {
+        } else {
             return <Loading />
         }
     }, [imgSelector])
