@@ -3,10 +3,10 @@ import styles from './CommonHeader.module.scss'
 
 function CommonHeader() {
     const navigate = useNavigate()
+    // 북마크 페이지로 이동
     const moveToPage = () => {
         navigate('/bookmark')
     }
-
     return (
         <header className={styles.header}>
             <div className={styles.header__logoBox}>

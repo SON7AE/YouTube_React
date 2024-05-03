@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import { useRecoilValueLoadable } from 'recoil'
 import { imageData } from '@/recoil/selectors/imageSelector'
 import CommonHeader from '@components/common/header/CommonHeader'
@@ -19,13 +19,13 @@ function index() {
 
     const CARD_LIST = useMemo(() => {
         // imgSelector.state = hasValue or loading
-        // console.log(imgSelector)
-        if (imgSelector.state === 'hasValue') {
+        console.log(imgSelector)
+        if (imgSelector !== null && imgSelector.state === 'hasValue') {
             const result = imgSelector.contents.results.map((card: CardDTO) => {
                 return <Card data={card} key={card.id} handleDialog={setOpen} handleSetData={setImgData} />
             })
             return result
-        } else {
+        } else if (imgSelector === null) {
             return <Loading />
         }
     }, [imgSelector])
