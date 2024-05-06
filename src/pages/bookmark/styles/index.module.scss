@@ -13,12 +13,14 @@ $HEADER-HEIGHT: 56px;
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
-        justify-content: flex-start;
+        justify-content: center;
 
         width: 100%;
         height: calc(100% - $HEADER-HEIGHT);
 
         padding: 48px;
         gap: 24px;
+
+        overflow-y: scroll;
     }
 }
