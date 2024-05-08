@@ -5,8 +5,8 @@ import { pageState } from '@/recoil/atoms/pageState'
 import styles from './CommonSearchBar.module.scss'
 
 function CommonSearchBar() {
-    const [search, setSearch] = useRecoilState(searchState)
-    const [page, setPage] = useRecoilState(pageState)
+    const [, setSearch] = useRecoilState(searchState)
+    const [, setPage] = useRecoilState(pageState)
     const [text, setText] = useState('')
     const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setText(event.target.value)

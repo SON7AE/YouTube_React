@@ -17,8 +17,8 @@ interface Navigation {
 function CommonNav() {
     const location = useLocation()
     const [navigation, setNavigation] = useState<Navigation[]>(navJson)
-    const [page, setPage] = useRecoilState(pageState)
-    const [search, setSearch] = useRecoilState(searchState)
+    const [, setPage] = useRecoilState(pageState)
+    const [, setSearch] = useRecoilState(searchState)
 
     useEffect(() => {
         navigation.forEach((nav: Navigation) => {
