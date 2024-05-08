@@ -1,4 +1,4 @@
-import { useMemo, useState, useEffect } from 'react'
+import { useMemo, useState } from 'react'
 import { useRecoilValueLoadable } from 'recoil'
 import { imageData } from '@/recoil/selectors/imageSelector'
 import CommonHeader from '@components/common/header/CommonHeader'

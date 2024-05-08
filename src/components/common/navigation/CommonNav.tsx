@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import styles from './CommonNav.module.scss'
 import navJson from './nav.json'
-import { useRecoilState, useSetRecoilState } from 'recoil'
+import { useRecoilState } from 'recoil'
 import { pageState } from '@/recoil/atoms/pageState'
 import { searchState } from '@/recoil/atoms/searchState'
 
